@@ -2,278 +2,64 @@
 
 ## Description
 
-This Python application is a simple Student Grade Management System that allows users to store, manage, and analyze student records. Student information is saved in a text file (`grades.txt`) and loaded into a dictionary for processing.
+This project is a Student Grade Management System developed in Python. It allows users to manage student records stored in a text file. The program can add new students, search for existing records, update grades, delete records, sort data, and calculate basic statistics.
 
-The system supports adding, viewing, searching, updating, deleting, sorting, and analyzing student grades through a command-line interface.
-
----
+Student information is stored in a file named `grades.txt` and loaded into a dictionary for processing. A backup file is also created before making changes to help prevent accidental data loss.
 
 ## Features
 
-### 1. Read Student Records
-Displays all student records stored in the system.
+The application supports:
 
-**Command:**
-```
-read
-```
+- Adding new student records
+- Viewing all student records
+- Searching for students by ID or name
+- Updating student grades
+- Deleting student records
+- Sorting records by ID, name, or grade
+- Calculating the highest, lowest, and average grade
+- Displaying students who scored above or below the average
+- Creating backup copies of the data file
 
-### 2. Add a New Student Record
-Appends a new student record to the file.
+## Files
 
-**Command:**
-```
-append
-```
+- `main.py` – contains the program source code
+- `grades.txt` – stores student records
+- `backup_grades.txt` – backup copy of the records
+- `README.md` – project documentation
 
-The user is prompted to enter:
-- Student ID
-- Student Name
-- Student Grade
+## Data Storage
 
-A backup file is automatically created before adding the new record.
+Student records are stored in the following format:
 
----
-
-### 3. Search for a Student
-Allows searching by:
-
-- Student ID
-- Student Name
-
-**Command:**
-```
-search
-```
-
-If a student is not found, the user can choose to search again.
-
----
-
-### 4. Update a Student Grade
-Updates the grade of an existing student.
-
-**Command:**
-```
-update
-```
-
-The user must provide:
-- Student ID
-- New Grade
-
-After updating:
-- The file is saved.
-- A backup file is created.
-
----
-
-### 5. Delete a Student Record
-Removes a student from the system.
-
-**Command:**
-```
-delete
-```
-
-A backup file is created before deletion.
-
----
-
-### 6. View and Sort Students
-Displays student records sorted by:
-
-1. ID
-2. Name
-3. Grade
-
-**Command:**
-```
-sort
-```
-
----
-
-### 7. Compute Grade Statistics
-Calculates:
-
-- Highest Grade
-- Lowest Grade
-- Average Grade
-
-**Command:**
-```
-stats
-```
-
----
-
-### 8. Display Students Above Average
-Shows all students whose grades are above the class average.
-
-**Command:**
-```
-above average
-```
-
----
-
-### 9. Display Students Below Average
-Shows all students whose grades are below the class average.
-
-**Command:**
-```
-below average
-```
-
----
-
-### 10. Backup System
-Creates a backup copy of the student records.
-
-**Backup File:**
-```
-backup_grades.txt
-```
-
-Backups are automatically generated before:
-- Adding a record
-- Updating a record
-- Deleting a record
-
----
-
-## File Structure
-
-```
-project/
-│
-├── main.py
-├── grades.txt
-├── backup_grades.txt
-└── README.md
-```
-
----
-
-## Data Format
-
-Student records are stored in `grades.txt` using the following format:
-
-```
+```text
 1001, John Smith, 85
 1002, Sarah Johnson, 92
 1003, Michael Brown, 78
 ```
 
-Each line contains:
+The program loads these records into a dictionary structure, making it easier to search, update, and process data.
 
-```
-Student ID, Student Name, Grade
-```
+## Screenshots
+![Student_Python_Image_1.png](./images/Student_Python_Image_1.png)
+![Student_Python_Image_2.png](./images/Student_Python_Image_2.png)
+![Student_Python_Image_3.png](./images/Student_Python_Image_3.png)
+![Student_Python_Image_4.png](./images/Student_Python_Image_4.png)
 
----
+## How It Works
 
-## Dictionary Structure
-
-The program stores student information in the following format:
-
-```python
-student_dictionary = {
-    "1001": {
-        "name": "John Smith",
-        "grade": 85
-    },
-    "1002": {
-        "name": "Sarah Johnson",
-        "grade": 92
-    }
-}
-```
-
----
-
-## Program Workflow
-
-1. Load records from `grades.txt`.
-2. User enters a command.
-3. Program executes the selected operation.
-4. Changes are saved back to the file when necessary.
-5. The menu continues running until the user enters:
-
-```
-exit
-```
-
----
-
-## Available Commands
-
-| Command | Description |
-|----------|-------------|
-| read | Display all student records |
-| append | Add a new student |
-| search | Search by ID or name |
-| update | Update a student's grade |
-| delete | Delete a student record |
-| sort | Sort students by ID, name, or grade |
-| stats | Display grade statistics |
-| above average | Show students above average |
-| below average | Show students below average |
-| exit | Exit the application |
-
----
+When the program starts, it reads the student records from the text file. The user can then choose different actions such as adding, searching, updating, or deleting records. Any changes made are saved back to the file. The program continues running until the user chooses to exit.
 
 ## Requirements
 
 - Python 3.x
-- No external libraries required
-
----
-
-## Running the Program
-
-Execute the Python file:
-
-```bash
-python main.py
-```
-
-Then enter one of the available commands when prompted.
-
-Example:
-
-```text
-What action do you want to take
-(read, append, search, update, delete,
-sort, stats, above average,
-below average or exit?)
-
-append
-```
-
----
-
-## Notes
-
-- Student data is stored permanently in `grades.txt`.
-- Backup files help prevent accidental data loss.
-- The application uses a dictionary structure for efficient data access and updates.
-- The interface is entirely text-based and runs in the terminal.
+- No external libraries are required
 
 ## Alternative GUI Version
 
-In addition to this command-line version, the project also includes an alternative implementation with a Graphical User Interface (GUI).
+An additional version of this project was created with a graphical user interface (GUI). It provides the same functionality as the console-based version while offering a more user-friendly experience.
 
-The GUI version provides the same functionality as the console application, including:
+The GUI version was developed with the assistance of Artificial Intelligence tools for the interface design and implementation, while maintaining the same core logic and functionality as the original application.
 
-- Adding student records
-- Viewing student records
-- Searching for students
-- Updating grades
-- Deleting records
-- Sorting records
-- Computing statistics
-- Creating backup files
+## Conclusion
 
-The GUI was developed with the assistance of Artificial Intelligence tools to help design and implement the user interface while preserving the core functionality and logic of the original program.
+This project demonstrates the use of Python dictionaries, file handling, functions, and basic data processing techniques to create a simple student record management system.
