@@ -1,6 +1,6 @@
 # Student Grade Management System
 
-## Overview
+## Description
 
 This Python application is a simple Student Grade Management System that allows users to store, manage, and analyze student records. Student information is saved in a text file (`grades.txt`) and loaded into a dictionary for processing.
 
